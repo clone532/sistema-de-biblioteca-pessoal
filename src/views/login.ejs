@@ -51,18 +51,18 @@
       <!-- Cadastro -->
       <div class="tab-pane fade" id="register" role="tabpanel">
         <h4 class="mb-3">Cadastro</h4>
-        <form>
+        <form method="post" action="/user/register">
           <div class="mb-3">
             <label for="registerName" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="registerName" required>
+            <input name="nome" type="text" class="form-control" id="registerName" required>
           </div>
           <div class="mb-3">
             <label for="registerEmail" class="form-label">Email</label>
-            <input type="email" class="form-control" id="registerEmail" required>
+            <input name="email" type="email" class="form-control" id="registerEmail" required>
           </div>
           <div class="mb-3">
             <label for="registerPassword" class="form-label">Senha</label>
-            <input type="password" class="form-control" id="registerPassword" required>
+            <input name="senha" type="password" class="form-control" id="registerPassword" required>
           </div>
           <button type="submit" class="btn btn-success w-100">Cadastrar</button>
         </form>

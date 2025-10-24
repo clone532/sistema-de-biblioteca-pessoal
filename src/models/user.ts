@@ -1,6 +1,6 @@
 import { connection } from "../infra/connection";
 
-type User = {
+export type User = {
     id?: number
     nome: string;
     email: string;
@@ -50,6 +50,17 @@ export async function getById(id: string) {
         `SELECT * FROM users
         WHERE id=$1`,
         [id]
+    );
+    return rows[0];
+
+}
+ // essa função busca um usuário no banco
+
+export async function getByEmail(email: string) {
+    const { rows } = await connection.query(
+        `SELECT * FROM users
+        WHERE email=$1`,
+        [email]
     );
     return rows[0];
 }
