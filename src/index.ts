@@ -1,4 +1,5 @@
 import express from 'express';
+import { userRoutes } from './routes/user_routes';
 
 const app = express();
 
@@ -15,6 +16,8 @@ app.get('/', function (req, res) {
 app.get('/login', function (req, res) {
     res.render('login', { message: 'Hello' });
 });
+
+app.use(userRoutes);
 
 app.listen(3333, () => {
     console.log('Servidor rodando no endereço http://localhost:3333');

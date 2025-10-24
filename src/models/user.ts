@@ -29,8 +29,8 @@ export async function getAll() {
 export async function updateById(user: User) {
     await connection.query(
         `UPDATE users
-        SET nome=$1, senha=$2, email=$3, role=$4
-        WHERE id =$5;`,
+        SET nome=$1, senha=$2, email=$3,
+        WHERE id =$4;`,
         [
             user.nome,
             user.senha,
