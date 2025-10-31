@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { User, getByEmail, insert } from "../models/user";
+import { User, getByEmail, getByEmailAndPassword, insert } from "../models/user";
 
 export function show_login(req: Request, res: Response) {
     res.render('login');
@@ -41,5 +41,33 @@ export async function register(req: Request, res: Response) {
             type: 'success',
             value: 'Usuário cadastrado com sucesso!'    
         }
+    });
+}
+
+export async function login(req: Request, res: Response) {
+    const { email, senha } = req.body;
+
+    if (!email || !senha) {
+        return res.render('login', {
+            response: {
+                type: 'error',
+                value: 'Preencha os campos corretamente.'    
+            }
+        });
+    }
+
+    const user = await getByEmailAndPassword(email, senha);
+
+    if (!user) {
+        return res.render('login', {
+            response: {
+                type: 'error',
+                value: 'Email ou senha incorretos.'   
+            }
+        });
+    }
+
+    res.render('dashboard', {
+        nome: user.nome
     });
 }

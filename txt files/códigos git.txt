@@ -1,0 +1,10 @@
+git add .
+
+git config --global user.email "emanuelly.viana@etec.sp.gov.br"
+
+git config --global user.name "clone532"
+
+git commit -m "nome do commit"
+
+git push origin main
+(ou master)

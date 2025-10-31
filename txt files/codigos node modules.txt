@@ -1,0 +1,7 @@
+npm i
+
+npm run dev
+
+npm i pg
+
+npm i -D @types/pg

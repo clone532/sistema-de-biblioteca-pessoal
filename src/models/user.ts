@@ -64,3 +64,12 @@ export async function getByEmail(email: string) {
     );
     return rows[0];
 }
+
+export async function getByEmailAndPassword(email: string, senha: string) {
+    const { rows } = await connection.query(
+        `SELECT * FROM users
+        WHERE email=$1 and senha=$2`,
+        [email, senha]
+    );
+    return rows[0];
+}

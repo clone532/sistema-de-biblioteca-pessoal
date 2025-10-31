@@ -1,0 +1,7 @@
+slide - https://getbootstrap.com/docs/5.3/components/carousel/
+
+botoes - https://getbootstrap.com/docs/5.3/components/buttons/
+
+card - https://getbootstrap.com/docs/5.3/components/card/
+
+alertas - https://sweetalert2.github.io
