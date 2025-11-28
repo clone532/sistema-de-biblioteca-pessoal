@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { User, getByEmail, getByEmailAndPassword, insert } from "../models/user";
 
 export function show_login(req: Request, res: Response) {
-    res.render('login');
+    res.render('login', { response: null });
 }
 
 export async function register(req: Request, res: Response) {
