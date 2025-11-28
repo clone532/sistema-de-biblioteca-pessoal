@@ -66,8 +66,10 @@ export async function login(req: Request, res: Response) {
             }
         });
     }
-
-    res.render('dashboard', {
-        nome: user.nome
-    });
+    (req.session as any).user = {
+        nome: user.nome,
+        email: user.email,
+        id: user.id
+    }
+    res.redirect('/adm');
 }
